@@ -22,5 +22,4 @@ if __name__ == "__main__":
             write_error_message_to_discuss(driver, item)
 
         driver.quit()
-        time.sleep(duration)
-        
+        time.sleep(float(duration))
