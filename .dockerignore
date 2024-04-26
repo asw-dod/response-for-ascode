@@ -1,3 +1,6 @@
 envs/
 .*
 scripts/
+*.md
+LICENSE
+__pycache__
