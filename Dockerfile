@@ -1,7 +1,6 @@
 FROM python:3.12.3
 
 LABEL org.opencontainers.image.source=https://github.com/asw-dod/response-for-ascode
-# LABEL org.opencontainers.image.description="My container image"
 LABEL org.opencontainers.image.licenses=MIT
 
 WORKDIR /app
