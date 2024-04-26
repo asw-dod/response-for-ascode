@@ -1,5 +1,3 @@
-# HI!
-
 # Dependency
 
 this program is requred to use many of the dependency. so, you can previosuly resolve dependency list below.
