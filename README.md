@@ -17,3 +17,13 @@ $ ./scripts/pull.sh
 # It's all.
 $ ./exec.sh {YOUR_ASCODE_ID} {YOUR_ASCODE_PW}
 ```
+
+# Parameter from Environment for Container
+
+Name|Type|Description
+:---:|:---:|:---:
+`ASCODE_USERID`|`str`|user id in ascode
+`ASCODE_USERPW`|`str`|user password in ascode
+`DURATION_PER_CHECK`|`float`|duration of time for repeat(unit: sec) 
+
+
