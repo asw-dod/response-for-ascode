@@ -1,7 +1,6 @@
 import os
 from dotenv import load_dotenv
 from ascode import *
-from utils import * 
 import time
 import logging
 
@@ -14,11 +13,10 @@ ascode_pw = os.getenv('ASCODE_USERPW')
 duration = os.getenv('DURATION_PER_CHECK')
 
 if __name__ == "__main__":
-    s = time.time()
+    s = 0
     while True:
         cur = time.time()
         if (cur - s) > float(duration):
-            cur = s
             driver = driver_create()
             login(driver, ascode_id, ascode_pw)
             items = get_discuss_list(driver, ascode_id)
@@ -28,3 +26,4 @@ if __name__ == "__main__":
                 write_error_message_to_discuss(driver, item)
 
             driver.quit()
+            s = cur
