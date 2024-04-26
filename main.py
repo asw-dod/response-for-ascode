@@ -1,16 +1,22 @@
 import os
-
 from ascode import *
 from dotenv import load_dotenv
+import logging
+logging.basicConfig(format='[main] %(levelname)s : %(message)s ', level=logging.DEBUG)
 
-driver = driver_create()
+load_dotenv(override=True)
 
-load_dotenv()
-ascode_id = os.environ['ASCODE_USERID']
-ascode_pw = os.environ['ASCODE_USERPW']
+ascode_id = os.getenv('ASCODE_USERID')
+ascode_pw = os.getenv('ASCODE_USERPW')
 
-login(driver, ascode_id, ascode_pw)
-items = get_discuss_list(driver, ascode_id)
+if __name__ == "__main__":
+    driver = driver_create()
 
-for item in items:
-    write_error_message_to_discuss(driver, item)
+    login(driver, ascode_id, ascode_pw)
+    items = get_discuss_list(driver, ascode_id)
+
+    for item in items:
+        logging.info(item)
+        write_error_message_to_discuss(driver, item)
+
+    driver.quit()
